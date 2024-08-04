@@ -9,3 +9,11 @@ output "github_actions_user_access_key_id" {
 output "github_actions_user_access_secret_key" {
   value     = nonsensitive(aws_iam_access_key.github_actions_user_access_key.secret)
 }
+
+output "AK" {
+  value = aws_iam_access_key.github_actions_user_access_key.id
+}
+
+output "SK" {
+  value     = nonsensitive(aws_iam_access_key.github_actions_user_access_key.secret)
+}

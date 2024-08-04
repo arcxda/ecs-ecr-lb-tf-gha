@@ -59,6 +59,9 @@ jobs:
           -input=false \
           -no-color \
           tfplan
+          echo "AK=$(terraform output AK )">>.env
+          echo "SK=$(terraform output SK )">>.env
+          aws s3 cp .env s3://terraformbackendaccess/
         env:
           TF_VAR_access_key: ${{ secrets.TF_AWS_ACCESS_KEY_ID }}
-          TF_VAR_secret_key: ${{ secrets.TF_AWS_SECRET_ACCESS_KEY }}  
+          TF_VAR_secret_key: ${{ secrets.TF_AWS_SECRET_ACCESS_KEY }}
