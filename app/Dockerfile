@@ -9,6 +9,8 @@ WORKDIR /vite-app
 
 RUN ["pnpm", "install"]
 
+RUN ["vite", "build"]
+
 CMD ["pnpm", "dev"]
 
 EXPOSE 8000
