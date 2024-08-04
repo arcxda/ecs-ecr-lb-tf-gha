@@ -1,4 +1,4 @@
-name: Destroy Terraform Environment
+name: IaC Destroy Terraform Environment
 
 on:
   workflow_dispatch:
