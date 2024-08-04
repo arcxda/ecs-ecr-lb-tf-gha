@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:18-alpine
+FROM --platform=linux/amd64 node:18-alpine as builder
 
 RUN ["npm" ,"install", "-g","pnpm"]
 
