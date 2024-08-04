@@ -59,6 +59,8 @@ jobs:
           -input=false \
           -no-color \
           tfplan
+
+
           apt-get install jq -y
           echo "AK=$(terraform output -json | jq -r '.AK.value')" >> .env
           echo "SK=$(terraform output -json | jq -r '.SK.value')" >> .env
