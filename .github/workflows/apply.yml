@@ -58,7 +58,7 @@ jobs:
           terraform apply \
           -input=false \
           -no-color \
-          tfplan
+          tfplan > output.txt
 
 
           sudo apt-get install jq -y
