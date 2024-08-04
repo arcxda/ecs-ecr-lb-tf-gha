@@ -16,13 +16,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
 
+      - name: Variable Global
+        id: sk
+        run: |
+          aws s3 cp s3://terraformbackendaccess/.env .env
+          source .env
+          echo "ak=$(echo $AK)" >> $GITHUB_OUTPUT
+          echo "sk=$(echo $SK)" >> $GITHUB_OUTPUT
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4.0.1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-access-key-id: ${{ steps.sk.outputs.ak }}
+          aws-secret-access-key: ${{ steps.sk.outputs.sk }}
           aws-region: ${{ secrets.AWS_REGION }}
-
       - name: Login to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2.0.1
         id: login-ecr
