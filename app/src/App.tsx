@@ -8,17 +8,14 @@ function App() {
       <p className="footer">
         <code>
           Built with ❤️ by{" "}
-          <a href="https://www.linkedin.com/in/halchester/" target="_blank">
+          <a href="https://www.linkedin.com/in/jcarce/" target="_blank">
             Chester
           </a>{" "}
           |{" "}
-          <a href="https://github.com/halchester/ecr-ecs-ghactions" target="_blank">
+          <a href="https://github.com/arcxda/ecs-ecr-lb-tf-gha" target="_blank">
             Github
           </a>{" "}
           |{" "}
-          <a href="https://dev.to/halchester/deploying-container-applications-on-aws-with-cicd-pipelines-5d53" target="_blank">
-            See original post
-          </a>
         </code>
       </p>
     </div>
