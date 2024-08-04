@@ -56,7 +56,7 @@ resource "aws_iam_policy" "github_actions_user_access_policy" {
           "ecr:BatchCheckLayerAvailability",
           "ecr:PutImage"
         ],
-        Resource = [module.vite_app_repository.repository_arn]
+        Resource = ["*"]
       },
       {
         Effect = "Allow",
