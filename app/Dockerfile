@@ -9,7 +9,7 @@ WORKDIR /vite-app
 
 RUN ["pnpm", "install"]
 
-RUN ["vite", "build"]
+RUN ["pnpm", "build"]
 
 CMD ["pnpm", "dev"]
 
